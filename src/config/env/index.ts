@@ -4,7 +4,7 @@ import { EnvType } from "./types"
 
 const envConfig: EnvType = {
     API: {
-        URL: 'http://localhost:3000/v1'
+        URL: 'https://assistant-manager-api.mybluemix.net/v1'
     }
 }
 
