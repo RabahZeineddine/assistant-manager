@@ -1,0 +1,8 @@
+applications:
+  - path: .
+    memory: 256M
+    instances: 1
+    name: assistant-manager
+    disk_quota: 1024M
+    buildpacks:
+      - nodejs_buildpack
