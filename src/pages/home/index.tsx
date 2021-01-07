@@ -71,6 +71,11 @@ function Home() {
                 this application can test every input and compare the current
                 Skill output to the expected one.
               </Typography>
+              <Typography variant="body1" component="h2">
+                Check the <Link target="_blank" href="https://trello.com/invite/b/uxWnO0QU/29cf1fabdf5be0582f39c3021127faf4/assistant-manager">
+                  Trello link
+                </Link> for features requests :)
+              </Typography>
             </CardContent>
           </Card>
         </Grid>
