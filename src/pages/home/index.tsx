@@ -16,6 +16,7 @@ import style from "./style";
 import { DropzoneDialog } from "material-ui-dropzone";
 import AssistantAPI from "../../utils/apis/assistantAPI";
 import Helper from "utils/Helper";
+import ToastAlert from "../../components/ToastAlert/index";
 
 const useStyles = makeStyles(style);
 
@@ -23,6 +24,7 @@ function Home() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState<any>({});
 
   const handleFileSubmit = async (files: Array<File>) => {
     setLoading(true);
@@ -35,6 +37,7 @@ function Home() {
       }
     } catch (error) {
       console.error(error);
+      setError(error);
     } finally {
       setLoading(false);
     }
@@ -53,6 +56,11 @@ function Home() {
         </Toolbar>
       </AppBar>
       <Grid container className={classes.content} justify="center">
+        {error && error.details && (
+          <Grid item>
+            <ToastAlert severity="error" text={error.details} />
+          </Grid>
+        )}
         <Grid item xs={10}>
           <Card elevation={5}>
             <CardContent>
